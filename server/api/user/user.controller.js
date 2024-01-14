@@ -60,4 +60,3 @@ exports.deleteUserById=(req, res ,next)=>{
     });
 }
 
-
