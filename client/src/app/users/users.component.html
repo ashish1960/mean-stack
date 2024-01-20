@@ -1,0 +1,13 @@
+<p>users works!</p>
+<!---
+First Name : <input [(ngModel)]="newUser.firstName" type="text"><br>
+Last Name : <input [(ngModel)]="newUser.lastName" type="text"><br>
+<button (click)="createUser()" class="btn btn-info">Submit</button><br>
+-->
+<button (click)="getUsers()" class="btn btn-primary">Get users</button>
+<button (click)="goToAddUser()" class=" btn btn-danger">Go to Add user</button>
+<ul>
+  @for (user of users; track user._id) {
+  <li>{{user.firstName}} {{user.lastName}} <button (click)="deleteUser(user._id)" class="btn btn-danger">delete</button></li> 
+  }
+</ul>
