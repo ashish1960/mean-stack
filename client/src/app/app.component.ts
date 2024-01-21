@@ -9,10 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'client';
 
-  users: any = [];
+  employee: any = [];
 
 
-  newUser = {
+  newemployee = {
     firstName: '',
     lastName: '',
   }
@@ -21,12 +21,12 @@ export class AppComponent {
 
   }
   getuser(){
-    this.http.get('http://localhost:3000/users').subscribe({
+    this.http.get('http://localhost:3000/employee').subscribe({
       next:(res : any)=>{
         console.log(res);
-        this.newUser.firstName='';
-        this.newUser.lastName='';
-        this.users=res.users;
+        this.newemployee.firstName='';
+        this.newemployee.lastName='';
+        this.employee=res.users;
       },
       error:(err)=>{
         console.log(err);
@@ -35,8 +35,8 @@ export class AppComponent {
   }
 
   
-  createuser() {
-    this.http.post('http://localhost:3000/users', this.newUser).subscribe({
+  createmployee() {
+    this.http.post('http://localhost:3000/employee', this.newemployee).subscribe({
       next: (res: any) => {
         console.log(res);
         this.getuser();
@@ -48,7 +48,7 @@ export class AppComponent {
   }
 
   deleteuser(id:any){
-      this.http.delete('http://localhost:3000/users/'+id).subscribe({
+      this.http.delete('http://localhost:3000/employee/'+id).subscribe({
         next: (res: any) => {
           console.log(res);
           this.getuser();
@@ -61,12 +61,12 @@ export class AppComponent {
   }
    
   getuserById(id:any){
-    this.http.get('http://localhost:3000/users'+id).subscribe({
+    this.http.get('http://localhost:3000/employee'+id).subscribe({
       next:(res : any)=>{
         console.log(res);
-        this.newUser.firstName='';
-        this.newUser.lastName='';
-        this.users=res.users;
+        this.newemployee.firstName='';
+        this.newemployee.lastName='';
+        this.newemployee=res.users;
       },
       error:(err)=>{
         console.log(err);

@@ -3,15 +3,15 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-users',
-  templateUrl: './add-users.component.html',
-  styleUrl: './add-users.component.scss'
+  selector: 'app-add-employee',
+  templateUrl: './add-employee.component.html',
+  styleUrl: './add-employee.component.scss'
 })
-export class AddUsersComponent {
+export class AddemployeeComponent {
 
 
-  users: any = [];
-  newUser = {
+  employee: any = [];
+  newemployee = {
     firstName: '',
     lastName: '',
   }
@@ -21,12 +21,12 @@ export class AddUsersComponent {
 
 
 
-  createUser() {
-    this.http.post('http://localhost:3000/users', this.newUser).subscribe({
+  createemployee() {
+    this.http.post('http://localhost:3000/employee', this.newemployee).subscribe({
       next: (res: any) => {
         console.log(res);
-        this.newUser.firstName = '';
-        this.newUser.lastName = '';
+        this.newemployee.firstName = '';
+        this.newemployee.lastName = '';
         //this.getUsers();
       },
       error: (err) => {
@@ -37,7 +37,7 @@ export class AddUsersComponent {
 
 
   deleteUser(id: any) {
-    this.http.delete('http://localhost:3000/users/' + id).subscribe({
+    this.http.delete('http://localhost:3000/employee/' + id).subscribe({
       next: (res: any) => {
         //this.getUsers();
       },
@@ -47,7 +47,7 @@ export class AddUsersComponent {
   }
 
   goToViewUsers() {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/employee']);
   }
 }
 

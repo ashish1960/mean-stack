@@ -5,14 +5,14 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrl: './users.component.scss'
+  templateUrl: './employee.component.html',
+  styleUrl: './employee.component.scss'
 })
-export class UsersComponent {
+export class employeeComponent {
 
-  users: any = [];
+  employee: any = [];
 
-  newUser = {
+  newemployee = {
     firstName: '',
     lastName: '',
   }
@@ -21,11 +21,11 @@ export class UsersComponent {
   }
 
   getUsers() {
-    this.http.get('http://localhost:3000/users').subscribe({
+    this.http.get('http://localhost:3000/employee').subscribe({
       next: (res: any) => {
         console.log(res);
 
-        this.users = res.users;
+        this.employee = res.employee;
       },
       error: (err) => {
         console.log(err);
@@ -34,11 +34,11 @@ export class UsersComponent {
   }
 
   createUser() {
-    this.http.post('http://localhost:3000/users', this.newUser).subscribe({
+    this.http.post('http://localhost:3000/employee', this.newemployee).subscribe({
       next: (res: any) => {
         console.log(res);
-        this.newUser.firstName = '';
-        this.newUser.lastName = '';
+        this.newemployee.firstName = '';
+        this.newemployee.lastName = '';
         this.getUsers();
       },
       error: (err) => {
@@ -48,7 +48,7 @@ export class UsersComponent {
   }
 
   deleteUser(id: any) {
-    this.http.delete('http://localhost:3000/users/' + id).subscribe({
+    this.http.delete('http://localhost:3000/employee/' + id).subscribe({
       next: (res: any) => {
         this.getUsers();
       },
@@ -59,7 +59,7 @@ export class UsersComponent {
 
 
   goToAddUser() {
-    this.router.navigate(['/add-users']);
+    this.router.navigate(['/add-employee ']);
   }
 
 }

@@ -1,18 +1,22 @@
 import { NgModule } from "@angular/core";
-import { UsersComponent } from "./users/users.component";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterOutlet } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
-import { AddUsersComponent } from "./add-users/add-users.component";
 import { AppComponent } from "./app.component";
+import { LoginComponent } from "./login/login.component";
+import { RegistraionComponent } from "./registraion/registraion.component";
+import { employeeComponent } from "./employee/employee.component";
+import { AddemployeeComponent } from "./add-employee/add-employee.component";
 @NgModule({
     declarations: [
         AppComponent,
-        UsersComponent,
-        AddUsersComponent
+        employeeComponent,
+        AddemployeeComponent,
+        LoginComponent,
+        RegistraionComponent,
     ],
     imports: [
         CommonModule,
