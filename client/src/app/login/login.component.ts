@@ -8,30 +8,32 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  users: any = [];
+  user: any = [];
   newUser = {
-    firstName: '',
-    lastName: '',
+    email: '',
+    password: '',
   }
 
   constructor(private http: HttpClient,private router: Router) {
   }
 
 
-
-  createUser() {
-    this.http.post('http://localhost:3000/users', this.newUser).subscribe({
-      next: (res: any) => {
+  login(){
+    this.http.post('http://localhost:3000/user/login',this.newUser).subscribe({
+      next:(res:any)=>{
         console.log(res);
-        this.newUser.firstName = '';
-        this.newUser.lastName = '';
-        //this.getUsers();
+        this.newUser.email='';
+        this.newUser.password='';
+        this.user=res.user;
+        
       },
-      error: (err) => {
+      error:(err)=>{
         console.log(err);
       },
     })
   }
+
+
 
 
   registraion(){

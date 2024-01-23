@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterOutlet } from "@angular/router";
 import { CommonModule } from "@angular/common";
@@ -24,6 +24,7 @@ import { AddemployeeComponent } from "./add-employee/add-employee.component";
         AppRoutingModule,
         HttpClientModule, 
         FormsModule,
+        ReactiveFormsModule,
     ],
     bootstrap: [AppComponent]
 })

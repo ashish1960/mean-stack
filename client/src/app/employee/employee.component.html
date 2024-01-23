@@ -6,6 +6,7 @@ Last Name : <input [(ngModel)]="newUser.lastName" type="text"><br>
 -->
 <button (click)="getUsers()" class="btn btn-primary">Get users</button>
 <button (click)="goToAddUser()" class=" btn btn-danger">Go to Add user</button>
+<button (click)="goToregegistarion()">registraion</button>
 <ul>
   @for (employee of employee; track employee._id) {
   <li>{{employee.firstName}} {{employee.lastName}} <button (click)="deleteUser(employee._id)" class="btn btn-danger">delete</button></li> 

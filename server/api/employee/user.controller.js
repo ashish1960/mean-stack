@@ -26,7 +26,6 @@ exports.login =async(req,res,next)=>{
         if (existingsUser) {
             return res.status(200).json({
                 message: 'Login Successful'
-                
             });
         } else {
            

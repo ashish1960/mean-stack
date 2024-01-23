@@ -59,7 +59,11 @@ export class employeeComponent {
 
 
   goToAddUser() {
-    this.router.navigate(['/add-employee ']);
+    this.router.navigate(['/add-employee']); 
+  }
+
+  goToregegistarion(){
+    this.router.navigate(['/registraion']);
   }
 
 }
