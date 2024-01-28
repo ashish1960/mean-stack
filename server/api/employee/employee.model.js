@@ -5,6 +5,10 @@ const employeeSchema = new mongoose.Schema({
     
     firstName: String,
     lastName: String,
+    email: { type: String, required: true },  //email should be unique for every user
+    phoneNo: String,
+    gender: String,
+    
    
 });
 

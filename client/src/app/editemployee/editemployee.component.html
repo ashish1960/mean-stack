@@ -1,0 +1,17 @@
+<p>editemployee works!</p>
+<div class="container p-4">
+    @if (isloging) {
+    <div class="form">
+      <label>First Name</label>
+      <input [(ngModel)]="newemployee.firstName" type="text" class="form-control"/>
+    </div>
+    <div class="">
+      <label>Last Name</label>
+      <input  [(ngModel)]="newemployee.lastName" class="form-control" />
+    </div><button (click)="updateUser()" type="submit" class="btn btn-warning">Update</button>
+    <button routerLink="/employee" type="submit" class="btn btn-primary">Back</button>
+}@else{
+    <h1>......loding</h1>
+}
+</div>
+

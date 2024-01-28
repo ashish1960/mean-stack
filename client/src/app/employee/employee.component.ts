@@ -11,24 +11,35 @@ import { Router } from '@angular/router';
 export class employeeComponent implements OnInit{
 
   employee: any = [];
+  isloging=false;
+
 
   newemployee = {
     firstName: '',
     lastName: '',
   }
+   
 
-  constructor(private http: HttpClient,private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
+  ngOnInit(): void {
+    this.getUsers(); 
+  }
+
+
   getUsers() {
+    this.isloging=true;
     this.http.get('http://localhost:3000/employee').subscribe({
       next: (res: any) => {
         console.log(res);
 
         this.employee = res.employee;
+        this.isloging=false;
       },
       error: (err) => {
         console.log(err);
+        this.isloging=false;
       }
     })
   }
@@ -47,8 +58,8 @@ export class employeeComponent implements OnInit{
     })
   }
 
-  deleteUser(id: any) {
-    this.http.delete('http://localhost:3000/employee/' + id).subscribe({
+  deleteUserById(id: any) {
+    this.http.delete('http://localhost:3000/employee/'+ id).subscribe({
       next: (res: any) => {
         this.getUsers();
       },
@@ -66,8 +77,5 @@ export class employeeComponent implements OnInit{
     this.router.navigate(['/registraion']);
   }
 
-  ngOnInit(): void {
-    this.getUsers(); 
-  }
-
+  
 }

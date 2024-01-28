@@ -5,7 +5,7 @@
   </button>
 <!--<button (click)="goToregegistarion()">registraion</button>
 -->
-
+@if(isloging ==false){
 <table class="table">
   <thead>
     <tr>
@@ -21,11 +21,19 @@
         <th scope="row">{{ $index + 1 }}</th>
         <td>{{ employee.firstName }}</td>
         <td>{{ employee.lastName }}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.gender}}</td>
         <td>
-          <button (click)="deleteUser(employee._id)" class="btn btn-danger">delete</button>
+          <button (click)="deleteUserById(employee._id)" class="btn btn-danger">delete</button>
         </td>
+        <td>   <button [routerLink]="'/editemployee/' + employee._id" class="btn btn-warning">
+          Edit
+        </button></td>
       </tr>
       }
   </tbody>
 </table>
-
+} @else {
+  <h1>......Loding</h1>
+}
+</div>

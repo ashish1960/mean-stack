@@ -18,7 +18,11 @@ exports.getemployee = (req, res, next) => {
 exports.createUser = (req, res, next) => {
     const newemploye = new employeeModel({
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        email:req.body.email,
+        gender:req.body.gender,
+        phoneNo:req.body.phoneNo,
+        
     }); 
 
     newemploye
@@ -36,7 +40,7 @@ exports.createUser = (req, res, next) => {
 }
 
 exports.getUserById = (req, res, next) => {
-    UserModel.findById(req.params.id).then((result) => {
+    employeeModel.findById(req.params.id).then((result) => {
         if (result) {
             res.status(200).json(result);
         } else {
@@ -50,7 +54,7 @@ exports.getUserById = (req, res, next) => {
 };
 
 exports.deleteUserById=(req, res ,next)=>{
-    UserModel.findOneAndDelete(req.params.id).then((result)=>{
+    employeeModel.findOneAndDelete(req.params.id).then((result)=>{
         res.status(200).json(result);
 
     }).catch(err => {
@@ -61,7 +65,7 @@ exports.deleteUserById=(req, res ,next)=>{
 };
 
 exports.updateUser = (req, res, next) => {
-    UserModel.findByIdAndUpdate(req.params.id, req.body)
+    employeeModel.findByIdAndUpdate(req.params.id, req.body)
         .then((result) => {
             res.status(202).json({ msg: 'User updated', data: result });
         }).catch(err => {

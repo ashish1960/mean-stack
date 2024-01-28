@@ -12,7 +12,7 @@ router.delete('/:id',employeeController.deleteUserById);
 
 router.put('/:id', employeeController.updateUser);
 
-router.post('/login', employeeController.login)
+router.post('/login', employeeController.login);
 
 
 module.exports = router;

@@ -10,6 +10,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegistraionComponent } from "./registraion/registraion.component";
 import { employeeComponent } from "./employee/employee.component";
 import { AddemployeeComponent } from "./add-employee/add-employee.component";
+import { EditemployeeComponent } from "./editemployee/editemployee.component";
 @NgModule({
     declarations: [
         AppComponent,
@@ -17,6 +18,7 @@ import { AddemployeeComponent } from "./add-employee/add-employee.component";
         AddemployeeComponent,
         LoginComponent,
         RegistraionComponent,
+        EditemployeeComponent,
     ],
     imports: [
         CommonModule,

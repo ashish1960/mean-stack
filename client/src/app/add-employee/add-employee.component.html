@@ -1,5 +1,32 @@
-<p>GET USERS</p>
+<!---
 First Name : <input [(ngModel)]="newemployee.firstName" type="text"><br>
 Last Name : <input [(ngModel)]="newemployee.lastName" type="text"><br>
 <button (click)="createemployee()" class="btn btn-info">Submit</button><br>
 <button (click)="goToViewUsers()" class="btn btn-danger">Go to view users</button>
+-->
+
+    <div class="mb-3">
+      <label  >firstname</label>
+      <input  [(ngModel)]="newemployee.firstName" class="form-control" >
+     </div>
+    <div class="mb-3">
+      <label >lastname</label>
+      <input [(ngModel)]="newemployee.lastName" type="text" class="form-control" >
+    </div>
+    <div class="mb-3">
+        <label >phone no</label>
+        <input [(ngModel)]="newemployee.phoneNo" type="text" class="form-control" >
+      </div>
+      
+    <div class="mb-3">
+        <label >email</label>
+        <input [(ngModel)]="newemployee.email" type="email" class="form-control" >
+      </div>
+      <label>Gender</label>
+      <input  [(ngModel)]="newemployee.gender" type="radio" value="male" name="Gender"> Male
+        
+      <input  [(ngModel)]="newemployee.gender" type="radio" value="female" name="Gender"> Female
+    <br>
+    
+    <button (click)="createemployee()" type="submit" class="btn btn-primary" >Submit</button>
+    <button (click)="goToViewUsers()" class="btn btn-danger">Go to view users</button>

@@ -14,6 +14,9 @@ export class AddemployeeComponent {
   newemployee = {
     firstName: '',
     lastName: '',
+    email:'',
+    gender:'',
+    phoneNo:'',
   }
 
   constructor(private http: HttpClient,private router: Router) {
@@ -28,6 +31,10 @@ export class AddemployeeComponent {
         console.log(res);
         this.newemployee.firstName = '';
         this.newemployee.lastName = '';
+        this.newemployee.email='';
+        this.newemployee.gender='';
+        this.newemployee.phoneNo='';
+        
         //this.getUsers();
       },
       error: (err) => {
