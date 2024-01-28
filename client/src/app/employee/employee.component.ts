@@ -1,5 +1,5 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.scss'
 })
-export class employeeComponent {
+export class employeeComponent implements OnInit{
 
   employee: any = [];
 
@@ -64,6 +64,10 @@ export class employeeComponent {
 
   goToregegistarion(){
     this.router.navigate(['/registraion']);
+  }
+
+  ngOnInit(): void {
+    this.getUsers(); 
   }
 
 }

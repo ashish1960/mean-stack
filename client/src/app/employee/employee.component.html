@@ -1,14 +1,31 @@
-<p>users works!</p>
-<!---
-First Name : <input [(ngModel)]="newUser.firstName" type="text"><br>
-Last Name : <input [(ngModel)]="newUser.lastName" type="text"><br>
-<button (click)="createUser()" class="btn btn-info">Submit</button><br>
+
+<div class="m-4">
+  <button class="float-end btn btn-primary" (click)="goToAddUser()">
+    Go to Add employee
+  </button>
+<!--<button (click)="goToregegistarion()">registraion</button>
 -->
-<button (click)="getUsers()" class="btn btn-primary">Get users</button>
-<button (click)="goToAddUser()" class=" btn btn-danger">Go to Add user</button>
-<button (click)="goToregegistarion()">registraion</button>
-<ul>
-  @for (employee of employee; track employee._id) {
-  <li>{{employee.firstName}} {{employee.lastName}} <button (click)="deleteUser(employee._id)" class="btn btn-danger">delete</button></li> 
-  }
-</ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last lastname</th>
+      <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (employee of employee; track employee._id){
+      <tr>
+        <th scope="row">{{ $index + 1 }}</th>
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>
+          <button (click)="deleteUser(employee._id)" class="btn btn-danger">delete</button>
+        </td>
+      </tr>
+      }
+  </tbody>
+</table>
+
